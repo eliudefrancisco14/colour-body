@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centralizar Conteúdo</title>
+  <link rel="shortcut icon" href="/image/paint.png" type="image/x-icon">
+  <title>Paleta de cores hexa</title>
   <style>
     body {
       text-align: center;
@@ -13,7 +15,15 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      transition: background-color 0.5s ease; /* Adiciona uma transição suave para a mudança de cor */
+      transition: background-color 0.5s ease; 
+    }
+
+    label {
+      font-size: 50px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      margin-bottom: 20px;
+      margin-top: 10px;
     }
 
     .color-box {
@@ -22,12 +32,21 @@
       margin: 10px;
       display: inline-block;
     }
+
+    #corSelecionada {
+      display: none;
+      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+      margin-top: 20px;
+    }
   </style>
 </head>
+
 <body>
+  <img src="/image/paint.png" alt="Logo" height="50px">
   <label for="corEscolhida">Escolha uma cor:</label>
-  <input type="color" id="corEscolhida" name="corEscolhida" value="#ff0000">
-  <div id="corSelecionada">Cor Selecionada: #ff0000</div>
+  <input type="color" id="corEscolhida" name="corEscolhida" value="#">
+  <div id="corSelecionada">Cor Selecionada: #</div>
 
   <script>
     const corInput = document.getElementById("corEscolhida");
@@ -38,7 +57,10 @@
       const corSelecionada = corInput.value;
       corSelecionadaDiv.textContent = `Cor Selecionada: ${corSelecionada}`;
       body.style.backgroundColor = corSelecionada;
+
+      corSelecionadaDiv.style.display = "block";
     });
   </script>
 </body>
+
 </html>
