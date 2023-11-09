@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centralizar Conteúdo</title>
+  <style>
+    body {
+      text-align: center;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background-color 0.5s ease; /* Adiciona uma transição suave para a mudança de cor */
+    }
+
+    .color-box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <label for="corEscolhida">Escolha uma cor:</label>
+  <input type="color" id="corEscolhida" name="corEscolhida" value="#ff0000">
+  <div id="corSelecionada">Cor Selecionada: #ff0000</div>
+
+  <script>
+    const corInput = document.getElementById("corEscolhida");
+    const corSelecionadaDiv = document.getElementById("corSelecionada");
+    const body = document.body;
+
+    corInput.addEventListener("input", function() {
+      const corSelecionada = corInput.value;
+      corSelecionadaDiv.textContent = `Cor Selecionada: ${corSelecionada}`;
+      body.style.backgroundColor = corSelecionada;
+    });
+  </script>
+</body>
+</html>
